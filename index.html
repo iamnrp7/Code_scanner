@@ -4,25 +4,74 @@
     <title>Image Upload and QR Code Scanner</title>
 
     <style>
-    body {
-        background-color: #333; /* Dark background color */
-        color: #fff; /* Text color */
-    }
-    h1 {
-        color: #fff; /* Heading text color */
-    }
-    #bg-video {
-        position: fixed;
-        top: 0;
-        left: 0;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -1;
-    }
+        /* Add this CSS to style the buttons */
+        input[type="file"] {
+            background-color: #007BFF; /* Change to the color you prefer */
+            color: #fff; /* Text color for the button */
+            padding: 10px 20px; /* Adjust the padding as needed */
+            border: none;
+            cursor: pointer;
+        }
 
-</style>    
+        input[type="submit"] {
+            background-color: #28A745; /* Change to the color you prefer */
+            color: #fff; /* Text color for the button */
+            padding: 10px 20px; /* Adjust the padding as needed */
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Additional styles for better button appearance */
+        input[type="file"]:hover,
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Change to a darker shade for hover effect */
+        }
+
+        /* If you want to remove the default button border */
+        input[type="file"],
+        input[type="submit"] {
+            border: none;
+            outline: none;
+            margin: 0;
+        }
+
+        body {
+            background-color: #333; /* Dark background color */
+            color: #fff; /* Text color */
+        }
+
+        h1 {
+            position: relative;
+            width: 100%;
+            height: 20vh;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+
+        /* Add this CSS to align the input under Heading 1 */
+        form {
+            text-align: center;
+        }
+
+        input[type="file"],
+        input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
     <h1>Image Upload and QR Code Scanner</h1>
@@ -31,10 +80,9 @@
         <input type="submit" value="Start QR Code Scan">
     </form>
     <img id="uploaded-image" style="display: none;">
-    <div id="qr-code-result">{{ qr_code_result }}</div>
+    
 </body>
 <video autoplay loop muted playsinline poster="background-poster.jpg" id="bg-video">
-    <source src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&controls=0&showinfo=0" type="video/mp4">
+    <source src="background_video.mp4" type="video/mp4">
 </video>
-
 </html>
