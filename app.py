@@ -7,7 +7,8 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/scan_qr_code", methods=["POST"])
+@app.route("/scan_qr_code", methods=["GET", "POST"])
+
 def scan_qr_code_route():
     # Handle file upload and QR code scanning here
     image = request.files['image']
