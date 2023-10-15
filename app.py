@@ -27,7 +27,7 @@ def scan_qr_code_route():
 
 # Function to check if a string is a valid URL
 def isValidURL(str):
-    return str.startswith("http://") or str.startswith("https://")
+    return str.startswith("http://") or str.startswith("https://") or str.startswith("")
 
 if __name__ == "__main__":
     app.run(debug=True)
