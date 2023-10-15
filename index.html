@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload and QR Code Scanner</title>
+
+    <style>
+    body {
+        background-color: #333; /* Dark background color */
+        color: #fff; /* Text color */
+    }
+    h1 {
+        color: #fff; /* Heading text color */
+    }
+    #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+    }
+
+</style>    
+</head>
+<body>
+    <h1>Image Upload and QR Code Scanner</h1>
+    <form method="post" action="/scan_qr_code" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*">
+        <input type="submit" value="Start QR Code Scan">
+    </form>
+    <img id="uploaded-image" style="display: none;">
+    <div id="qr-code-result">{{ qr_code_result }}</div>
+</body>
+<video autoplay loop muted playsinline poster="background-poster.jpg" id="bg-video">
+    <source src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&controls=0&showinfo=0" type="video/mp4">
+</video>
+
+</html>
